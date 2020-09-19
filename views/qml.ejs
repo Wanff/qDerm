@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Topi</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/red.svg" rel="icon">
+  <link href="assets/img/red.svg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/mvp.css" rel="stylesheet">
+
+
+</head>
+
+<body style="background: linear-gradient(90deg, #061C89, #D3353A);">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <!-- <h1 class="text-light"><a href="index.html"><span>Topi</span></a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="/"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Technologies</a></li>
+          <!-- <li><a href="#gallery">Gallery</a></li> -->
+          <li><a href="#team">Our Team</a></li>
+          <!-- <li><a href="#pricing">Pricing</a></li> -->
+          <!-- <li class="drop-down"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="drop-down"><a href="#">Drop Down 2</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+            </ul>
+          </li> -->
+          <li><a href="#contact">Contact Us!</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <div class="container" style="padding-bottom: 50px;">
+    <% var exists = true; %>
+    <% try { %>
+    <% if (profile) %>
+    <%      exists = true; %>
+    <% } catch(e) { exists = false; } %>
+    <% if (exists) { %>
+      <form id="form-id" action="/topi" method="post" class="form-box" style="padding-top: 50px; margin-top: 100px;">
+        <a href="/" style="position: absolute; top: 115px; left: 240px;">Back</a>
+        <h3 class="h4 text-black mb-2 mt-2" style="font-weight: 700; text-align: center;">Enter Information to Calculate Your Risk for Hypertension</h3>
+  
+  
+        <div class="form-group">
+          <input required type="text" class="form-control form-text-input" name = "profile[age]" placeholder="Age in Years" value= "<%= profile.age %>">
+        </div>
+  
+        <div class="form-group">
+          <label for="profile[gender]">Gender</label>
+          <select name="profile[gender]" id="">
+            <% if(profile.gender=='0'){ %>
+              <option value="0" selected>Male</option>
+              <option value="1">Female</option>
+            <% } else { %>
+              <option value="0">Male</option>
+              <option value="1" selected>Female</option>
+            <% } %>
+          </select>
+        </div>
+  
+  
+        <div class="form-group">
+          <label for="profile[race]">Race</label>
+          <select name="profile[race]" id="">
+            <%switch(profile.race){ 
+              case '1': %>
+              <option value="1" selected>Mexican American</option>
+              <option value="2">Hispanic</option>
+              <option value="5">Mixed</option>
+              <option value="3">White</option>
+              <option value="4">Black</option>
+              <option value="6">Asian</option>
+              <% break; %>
+            <% case '2': %>
+                <option value="1">Mexican American</option>
+                <option value="2" selected>Hispanic</option>
+                <option value="5">Mixed</option>
+                <option value="3">White</option>
+                <option value="4">Black</option>
+                <option value="6">Asian</option>
+              <% break; %>
+            <% case '3': %>
+                <option value="1">Mexican American</option>
+                <option value="2">Hispanic</option>
+                <option value="5">Mixed</option>
+                <option value="3" selected>White</option>
+                <option value="4">Black</option>
+                <option value="6">Asian</option>
+              <% break; %>
+            <% case '4': %>
+                <option value="1">Mexican American</option>
+                <option value="2">Hispanic</option>
+                <option value="5">Mixed</option>
+                <option value="3">White</option>
+                <option value="4" selected>Black</option>
+                <option value="6">Asian</option>
+              <% break; %>
+            <% case '5': %>
+                <option value="1">Mexican American</option>
+                <option value="2">Hispanic</option>
+                <option value="5" selected>Mixed</option>
+                <option value="3">White</option>
+                <option value="4">Black</option>
+                <option value="6">Asian</option>
+              <% break; %>
+            <% case '6': %>
+              <option value="1">Mexican American</option>
+              <option value="2">Hispanic</option>
+              <option value="5">Mixed</option>
+              <option value="3">White</option>
+              <option value="4">Black</option>
+              <option value="6" selected>Asian</option>
+              <% break; %>
+            <% } %>
+
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="profile[obese]">Are you obese?</label>
+          <select name="profile[obese]" id="">
+            <% if(profile.obese == '1') { %>
+              <option value="1" selected>Yes</option>
+              <option value="0">No</option>
+            <% } else{ %>
+              <option value="1">Yes</option>
+              <option value="0" selected>No</option>
+            <% } %>
+
+            </select>
+        </div>
+        <div class="form-group">
+          <label for="profile[avg_salt_table]">How often do you add salt to your food?</label>
+          <select name="profile[avg_salt_table]" id="">
+            <% if(profile.avg_salt_table == '1'){ %>
+              <option value="1" selected>Rarely</option>
+              <option value="2">Occasionally</option>
+              <option value="3">Very Often</option>
+            <% } else if(profile.avg_salt_table == '2') { %>
+              <option value="1">Rarely</option>
+              <option value="2" selected>Occasionally</option>
+              <option value="3">Very Often</option>
+            <% } else{ %>
+              <option value="1">Rarely</option>
+              <option value="2">Occasionally</option>
+              <option value="3" selected>Very Often</option>
+            <% } %>
+            
+            </select>
+        </div>
+        <div class="form-group">
+          <fieldset>
+            <legend>Smoking</legend>
+  
+            <label for="profile[everyday_cig]">Do you smoke everyday, somedays, or never?</label>
+            <select name="profile[everyday_cig]" id="">
+              <% if(profile.everyday_cig == '1'){ %>
+                <option value="1" selected>Everyday</option>
+                <option value="2">Somedays</option>
+                <option value="0">Never</option>
+              <% } else if(profile.everyday_cig == '2'){ %>
+                <option value="1">Everyday</option>
+                <option value="2" selected>Somedays</option>
+                <option value="0">Never</option>
+              <% } else {%>
+              <option value="1">Everyday</option>
+              <option value="2">Somedays</option>
+              <option value="0" selected>Never</option>
+              <% } %>
+            </select>
+  
+            <label for="profile[smoking_env_people]">How many people inside your household are smokers?</label>
+            <select name="profile[smoking_env_people]" id="">
+              <option value="" selected disabled hidden> </option>
+              <% switch(profile.smoking_env_people){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 or more</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 or more</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 or more</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 or more</option>
+                <% break;
+              } %>
+
+            </select>
+  
+            <label for="profile[smoking_env_smokers]">How many people smoke inside your household?</label>
+            <select name="profile[smoking_env_smokers]" id="">
+              <option value="" selected disabled hidden> </option>
+              <% switch(profile.smoking_env_smokers){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 or more</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 or more</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 or more</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 or more</option>
+                <% break;
+              } %>
+            </select>
+  
+            <label for="profile[smoking_env_days]">In the past week (from today), how many days did someone smoke inside your household?</label>
+            <select name="profile[smoking_env_days]" id="">
+              <option value="" selected disabled hidden> </option>
+              <% switch(profile.smoking_env_days){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '4': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '5': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '6': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <% break;
+                case '7': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+                <% break;
+              }%>
+
+            </select>
+          </fieldset>
+        </div>
+  
+        <div class="form-group">
+          <fieldset>
+            <legend>Physical Activity</legend>
+            <label for="profile[vig_work_freq]">In a typical week, how many days do you do vigorous-intensity activities (large increases in breathing or heart rate for at least 10 minutes) <strong>for your work (chores or job)?</strong> </label>
+            <select name="profile[vig_work_freq]" id="">
+              <% switch(profile.vig_work_freq){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '4': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '5': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '6': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <% break;
+                case '7': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+                <% break;
+              }%>
+            </select>
+            <label for="profile[mod_work_freq]">In a typical week, how many days do you do moderate-intensity activities (small increases in breathing or heart rate for at least 10 minutes) <strong>for your work (chores or job)?</strong></label>
+            <select name="profile[mod_work_freq]" id="">
+              <% switch(profile.mod_work_freq){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '4': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '5': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '6': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <% break;
+                case '7': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+                <% break;
+              }%>
+            </select>
+            <label for="profile[bike_walk_freq]">In a typical week, how many days do you bike or walk for at least 10 minutes continuously to get to and from places?</label>
+            <select name="profile[bike_walk_freq]" id="">
+              <% switch(profile.bike_walk_freq){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '4': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '5': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '6': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <% break;
+                case '7': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+                <% break;
+              }%>
+            </select>
+            <label for="profile[vig_play_freq]">In a typical week, how many days do you do vigorous-intensity activities (large increases in breathing or heart rate for at least 10 minutes) <strong>recreationally (for fun, sports, fitness, working-out, etc.)?</strong></label>
+            <select name="profile[vig_play_freq]" id="">
+              <% switch(profile.vig_play_freq){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '4': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '5': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '6': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <% break;
+                case '7': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+                <% break;
+              }%>
+            </select>
+            <label for="profile[mod_play_freq]">In a typical week, how many days do you do moderate-intensity activities (small increases in breathing or heart rate for at least 10 minutes) <strong>recreationally (for fun, sports, fitness, working-out, etc.)?</strong></label>
+            <select name="profile[mod_play_freq]" id="">
+              <% switch(profile.mod_play_freq){
+                case '0': %>
+                <option value="0" selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '1': %>
+                <option value="0">0</option>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '2': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '3': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '4': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4" selected>4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '5': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <% break;
+                case '6': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <% break;
+                case '7': %>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3 </option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+                <% break;
+              }%>
+            </select>
+          </fieldset>
+        </div>
+  
+  
+        <div class="form-group" style="text-align: center;">
+        <input type="submit" class="btn btn-primary sign-up" id="submit" value="Submit">
+        </div>
+    </form>
+        <% } else { %>
+    <form id="form-id" action="/topi" method="post" class="form-box" style="padding-top: 50px; margin-top: 100px;">
+      <a href="/" style="position: absolute; top: 115px; left: 240px;">Back</a>
+      <h3 class="h4 text-black mb-2 mt-2" style="font-weight: 700; text-align: center;">Enter Information to Calculate Your Risk for Hypertension</h3>
+
+
+      <div class="form-group">
+        <input type="text" class="form-control form-text-input" name = "profile[age]" placeholder="Age in Years">
+      </div>
+
+      <div class="form-group">
+        <label for="profile[gender]">Gender</label>
+        <select name="profile[gender]" id="">
+          <option value="" selected disabled hidden>Choose Gender</option>
+          <option value="0">Male</option>
+          <option value="1">Female</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="profile[race]">Race</label>
+        <select name="profile[race]" id="">
+          <option value="" selected disabled hidden>Choose Race</option>
+          <option value="1">Mexican American</option>
+          <option value="2">Hispanic</option>
+          <option value="2">Mixed</option>
+          <option value="3">White</option>
+          <option value="4">Black</option>
+          <option value="6">Asian</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="profile[obese]">Are you obese?</label>
+        <select name="profile[obese]" id="">
+          <option value="" selected disabled hidden> </option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="profile[avg_salt_table]">How often do you add salt to your food?</label>
+        <select name="profile[avg_salt_table]" id="">
+          <option value="" selected disabled hidden> </option>
+          <option value="1">Rarely</option>
+          <option value="2">Occasionally</option>
+          <option value="3">Very Often</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <fieldset>
+          <legend>Smoking</legend>
+
+          <label for="profile[everyday_cig]">Do you smoke everyday, somedays, or never?</label>
+          <select name="profile[everyday_cig]" id="">
+            <option value="" selected disabled hidden> </option>
+            <option value="1">Everyday</option>
+            <option value="2">Somedays</option>
+            <option value="0">Never</option>
+          </select>
+
+          <label for="profile[smoking_env_people]">How many people inside your household are smokers?</label>
+          <select name="profile[smoking_env_people]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 or more</option>
+          </select>
+
+          <label for="profile[smoking_env_smokers]">How many people smoke inside your household?</label>
+          <select name="profile[smoking_env_smokers]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 or more</option>
+          </select>
+
+          <label for="profile[smoking_env_days]">In the past week (from today), how many days did someone smoke inside your household?</label>
+          <select name="profile[smoking_env_days]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 </option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <legend>Physical Activity</legend>
+          <label for="profile[vig_work_freq]">In a typical week, how many days do you do vigorous-intensity activities (large increases in breathing or heart rate for at least 10 minutes) <strong>for your work (chores or job)?</strong> </label>
+          <select name="profile[vig_work_freq]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 </option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+          <label for="profile[mod_work_freq]">In a typical week, how many days do you do moderate-intensity activities (small increases in breathing or heart rate for at least 10 minutes) <strong>for your work (chores or job)?</strong></label>
+          <select name="profile[mod_work_freq]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 </option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+          <label for="profile[bike_walk_freq]">In a typical week, how many days do you bike or walk for at least 10 minutes continuously to get to and from places?</label>
+          <select name="profile[bike_walk_freq]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 </option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+          <label for="profile[vig_play_freq]">In a typical week, how many days do you do vigorous-intensity activities (large increases in breathing or heart rate for at least 10 minutes) <strong>recreationally (for fun, sports, fitness, working-out, etc.)?</strong></label>
+          <select name="profile[vig_play_freq]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 </option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+          <label for="profile[mod_play_freq]">In a typical week, how many days do you do moderate-intensity activities (small increases in breathing or heart rate for at least 10 minutes) <strong>recreationally (for fun, sports, fitness, working-out, etc.)?</strong></label>
+          <select name="profile[mod_play_freq]" id="">
+            <option value="" selected disabled hidden> </option>
+
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3 </option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+        </fieldset>
+      </div>
+
+
+      <div class="form-group" style="text-align: center;">
+      <input type="submit" class="btn btn-primary sign-up" id="submit" value="Submit">
+      </div>
+  </form>
+  <% } %>
+
+  </div>
+
+  <div class="container" style="text-align: center; color: white; padding-bottom: 50px;">
+    <h1>Results</h1>
+    <!-- <table>
+      <p class = "according_to">According to the American Heart Association. </p>
+      <tr>
+        <th>Normal Blood Pressure</th>
+        <th>Elevated Blood Pressure</th>
+        <th>Hypertension</th>
+      </tr>
+      <tr>
+        <th> 
+          <p class = "blood_pressure_info"> > 120 </p>
+          <hr class = "hr_blood_pressure_info">
+          <p class = "blood_pressure_info"> > 80</p>
+        </th>
+        <th>
+          <p class = "blood_pressure_info"> 120-129 </p>
+          <hr class = "hr_blood_pressure_info">
+          <p class = "blood_pressure_info"> > 80</p></th>
+        </th> 
+        <th>
+          <p class = "blood_pressure_info"> < 130 </p>
+          <hr class = "hr_blood_pressure_info">
+          <p class = "blood_pressure_info"> < 80</p></th>
+        </th>
+      </tr>
+    </table> -->
+    <% var exists = true; %>
+    <% try { %>
+    <% if (data) %>
+    <%      exists = true; %>
+    <% } catch(e) { exists = false; } %>
+    <% if (exists) { %>
+      <% systolic = data.split("/")[0]
+         diastolic = data.split("/")[1] %>
+      <p style="width: 55%; font-size: 20px; margin: auto; ">Change up your metrics to see how your health will change! Find the <strong>least possible change</strong> that results in the <strong>greatest positive effect.</strong></p>
+      <% if(Number(systolic) <= 120 && Number(diastolic) <= 80){ %>
+        <div class="circle_cropper mt-3" style="color:green;">
+          <p class = "blood_pressure"> <%= systolic%> </p>
+          <hr class = "hr_blood_pressure">
+          <p class = "blood_pressure"> <%= diastolic %></p>
+        </div>
+      <% } else if(120 <= Number(systolic) && Number(systolic) <= 129 && Number(diastolic) <= 80){ %>
+        <div class="circle_cropper mt-3" style="color:yellow;">
+          <p class = "blood_pressure"> <%= systolic%> </p>
+          <hr class = "hr_blood_pressure">
+          <p class = "blood_pressure"> <%= diastolic %></p>
+        </div>
+      <% } else if(Number(systolic) >= 130 && Number(diastolic) >= 80){ %>
+        <div class="circle_cropper mt-3" style="color:red;">
+          <p class = "blood_pressure"> <%= systolic%> </p>
+          <hr class = "hr_blood_pressure">
+          <p class = "blood_pressure"> <%= diastolic %></p>
+        </div>
+      <% } else{ %>
+        <div class="circle_cropper mt-3" style="color:white;">
+          <p class = "blood_pressure"> <%= systolic%> </p>
+          <hr class = "hr_blood_pressure">
+          <p class = "blood_pressure"> <%= diastolic %></p>
+        </div>
+      <% } %>
+
+      <a href="https://www.cdc.gov/bloodpressure/about.htm"><p class = "according_to">According to the American Heart Association. </p></a>
+    <% } else { %>
+    <p style="width: 55%; font-size: 20px; margin: auto; ">Enter something to see your results</p>
+    <% } %>
+  </div>
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,67 @@
+#form-id{
+    border: 2px solid grey;
+    border-radius: 7px;
+    padding: 30px;
+    width: 75%;
+    margin: auto auto;
+    background: white;
+}
+
+.form-text-input{
+    border-radius: .5rem;
+}
+
+.btn#submit{
+    background-color: #652A67;
+    width: 200px;
+    border-radius: 10px;
+    border-color: #652A67;
+}
+
+.blood_pressure{
+    font-size: 3rem;
+    margin: 0;
+    color:white;
+}
+.hr_blood_pressure{
+    width: 65%;
+    border: solid;
+    margin: 0 auto;
+    color:white;
+}
+
+/* .blood_pressure_info{
+    font-size: 1.5rem;
+    margin: 0;
+}
+.hr_blood_pressure_info{
+    width: 50%;
+    border: solid;
+    margin: 0 auto;
+} */
+
+table, th, tr{
+    border: solid;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: auto;
+}
+
+.according_to{
+    font-size: 14px;
+    margin: 0;
+    margin-right: 290px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+
+.circle_cropper{
+    width: 160px;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+    border: solid;
+}
