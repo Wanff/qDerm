@@ -14,11 +14,11 @@ app.get("/", (req, res)=>{
     res.render('index')
 })
 
-app.get("/topi", (req,res)=>{
+app.get("/qderm", (req,res)=>{
     res.render('qml')
 })
 
-app.post("/topi", calculateRisk)
+app.post("/qderm", calculateRisk)
 
 function calculateRisk(req, res){
     var profile = req.body.profile
