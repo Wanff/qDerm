@@ -85,7 +85,7 @@
   
   
         <div class="form-group">
-            <input class = "upload-mole"type="file" id="myFile" name="filename">
+            <input class = "upload-mole"type="file" id="myFile" name="image">
         </div>
         <input type="submit" class = "submit-mole">
         <p class = "mt-2">Check out the source code <a href  = "#">here</a></p>
@@ -101,36 +101,29 @@
     <%      exists = true; %>
     <% } catch(e) { exists = false; } %>
     <% if (exists) { %>
-      <% systolic = data.split("/")[0]
-         diastolic = data.split("/")[1] %>
-      <p style="width: 55%; font-size: 20px; margin: auto; ">Change up your metrics to see how your health will change! Find the <strong>least possible change</strong> that results in the <strong>greatest positive effect.</strong></p>
-      <% if(Number(systolic) <= 120 && Number(diastolic) <= 80){ %>
+        <% prob = Number(data)%>
+      <% if(prob <= 49){ %>
         <div class="circle_cropper mt-3" style="color:green;">
-          <p class = "blood_pressure"> <%= systolic%> </p>
-          <hr class = "hr_blood_pressure">
-          <p class = "blood_pressure"> <%= diastolic %></p>
+          <p class = "blood_pressure"> <%=prob%>% </p>
+    
         </div>
-      <% } else if(120 <= Number(systolic) && Number(systolic) <= 129 && Number(diastolic) <= 80){ %>
+      <% } else if(50 <= prob && prob <= 75){ %>
         <div class="circle_cropper mt-3" style="color:yellow;">
-          <p class = "blood_pressure"> <%= systolic%> </p>
-          <hr class = "hr_blood_pressure">
-          <p class = "blood_pressure"> <%= diastolic %></p>
+          <p class = "blood_pressure"> <%=prob%>% </p>
+      
         </div>
-      <% } else if(Number(systolic) >= 130 && Number(diastolic) >= 80){ %>
+      <% } else if(prob >= 76){ %>
         <div class="circle_cropper mt-3" style="color:red;">
-          <p class = "blood_pressure"> <%= systolic%> </p>
-          <hr class = "hr_blood_pressure">
-          <p class = "blood_pressure"> <%= diastolic %></p>
+          <p class = "blood_pressure"> <%=prob%>% </p>
+
         </div>
       <% } else{ %>
         <div class="circle_cropper mt-3" style="color:white;">
-          <p class = "blood_pressure"> <%= systolic%> </p>
-          <hr class = "hr_blood_pressure">
-          <p class = "blood_pressure"> <%= diastolic %></p>
+            <p class = "blood_pressure"> <%=prob%>% </p>
+
         </div>
       <% } %>
 
-      <a href="https://www.cdc.gov/bloodpressure/about.htm"><p class = "according_to">According to the American Heart Association. </p></a>
     <% } else { %>
     <p style="width: 55%; font-size: 20px; margin: auto; ">Enter something to see your results</p>
     <% } %>

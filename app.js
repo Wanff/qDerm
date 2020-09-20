@@ -21,26 +21,13 @@ app.get("/qderm", (req,res)=>{
 app.post("/qderm", calculateRisk)
 
 function calculateRisk(req, res){
-    var profile = req.body.profile
+    var image = req.body.image
     var process = spawn('python',["./qml.py", 
-    profile.gender, 
-    profile.age,
-    profile.race,
-    profile.obese,
-    profile.avg_salt_table,
-    profile.everyday_cig,
-    profile.smoking_env_people,
-    profile.smoking_env_smokers,
-    profile.smoking_env_days,
-    profile.vig_work_freq,
-    profile.mod_work_freq,
-    profile.bike_walk_freq,
-    profile.vig_play_freq,
-    profile.mod_play_freq
+    image
 ]); 
 
     process.stdout.on('data', function(data) { 
-        res.render('qml', {data: data.toString(), profile: req.body.profile }); 
+        res.render('qml', {data: data.toString(), profile: req.body.image }); 
     })
 }
 

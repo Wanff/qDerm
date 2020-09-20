@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   color: #444444;
 }
 
@@ -23,7 +23,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Proxima Nova", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -659,7 +659,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #A168B3;
+  /* color: #A168B3; */
 }
 
 /*--------------------------------------------------------------
@@ -859,7 +859,7 @@ section {
 .details .content h3 {
   font-weight: 600;
   font-size: 26px;
-  color: #A168B3;
+  /* color: #A168B3; */
 }
 
 .details .content ul {
