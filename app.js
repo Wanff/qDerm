@@ -22,7 +22,7 @@ app.post("/qderm", calculateRisk)
 
 function calculateRisk(req, res){
     var image = req.body.image
-    var process = spawn('python',["./qml.py", 
+    var process = spawn('python',["./qml/qml.py", 
     image
 ]); 
 
