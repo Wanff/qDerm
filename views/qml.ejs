@@ -89,7 +89,8 @@
         </div>
         <input type="submit" class = "submit-mole">
         <p class = "mt-2">Check out the source code <a href  = "https://github.com/Wanff/qDerm" target="_blank" >here</a></p>
-        </form>
+        <p style="width: 35%; margin: auto; font-size: 12px;">The trained QNN is not implemented on this webapp (Tensorflow Quantum can't save trained models). This is just a demo.</p>
+      </form>
 
   </div>
 
@@ -101,37 +102,35 @@
     <%      exists = true; %>
     <% } catch(e) { exists = false; } %>
     <% if (exists) { %>
-        <% prob = Number(data)%>
-      <% if(prob <= 49){ %>
-        <div class="circle_cropper mt-3" style="color:green;">
-          <p class = "blood_pressure"> <%=prob%>% </p>
-    
-        </div>
-      <% } else if(50 <= prob && prob <= 75){ %>
-        <div class="circle_cropper mt-3" style="color:yellow;">
-          <p class = "blood_pressure"> <%=prob%>% </p>
-      
-        </div>
-      <% } else if(prob >= 76){ %>
+      <% if(data == "Image does not possess the right dimensions :/"){ %>
         <div class="circle_cropper mt-3" style="color:red;">
           <p style="font-family: Proxima Nova;
           font-weight: 500;
           font-size: 20px;
           margin-top: 20px;
-          margin-bottom: 0;">Malignant</p>
-          <p class = "blood_pressure"> <%=prob%>% </p>
-
-        </div>
-      <% } else{ %>
-        <div class="circle_cropper mt-3" style="color:white;">
-            <p class = "blood_pressure"> <%=prob%>% </p>
-
+          margin-bottom: 0;"><%= data %></p>
         </div>
       <% } %>
+      <% if (Number(data)==1){ %>
+        <div class="circle_cropper mt-3" style="color:red;">
+          <p style="font-family: Proxima Nova;
+          font-weight: 500;
+          font-size: 20px;
+          margin-top: 20px;
+          margin-bottom: 0;">Malignant</p>  
+          <p class = "blood_pressure">Malignant</p>
 
-    <% } else { %>
-    <p style="width: 55%; font-size: 20px; margin: auto; ">Enter something to see your results</p>
-    <% } %>
+        </div>
+      <% } else if (Number(data)==0){ %>
+        <div class="circle_cropper mt-3" style="color:green;">
+          <p class = "blood_pressure">Benign</p>
+        </div>
+      <% } else { %>
+        <div class="circle_cropper mt-3" style="color:white;">
+          <p class = "blood_pressure"> Unknown </p>
+      </div>
+      <% } %>
+      <% } %>
   </div>
 
 
